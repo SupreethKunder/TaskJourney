@@ -14,6 +14,7 @@ interface Props {
 const TodoList: React.FC<Props> = ({ todos, setTodos, completedTodos, setCompletedTodos }: Props) => {
     return (
         <div className={styles.container}>
+
             <StrictModeDroppable droppableId='TodoListTodo'>
                 {
                     (provided, snapshot) => (

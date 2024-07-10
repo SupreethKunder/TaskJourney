@@ -4,6 +4,7 @@ import InputField from './components/inputField/InputField';
 import { Todo } from './types/model';
 import TodoList from './components/todoList/TodoList';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { CustomScroll } from "react-custom-scroll";
 
 const App: React.FC = () => {
 
@@ -35,7 +36,7 @@ const App: React.FC = () => {
       if (destination.droppableId === 'TodoListCompleted') {
         complete.splice(destination.index, 0, add);
         complete = complete.map((todo, idx) =>
-            idx == destination.index ? { ...todo, isDone: !todo.isDone } : todo
+          idx == destination.index ? { ...todo, isDone: !todo.isDone } : todo
         );
       } else {
         active.splice(destination.index, 0, add);
@@ -54,13 +55,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className='App'>
-        <span className="heading">TaskJourney</span>
-        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-        <TodoList todos={todos} setTodos={setTodos} completedTodos={completedTodos} setCompletedTodos={setCompletedTodos} />
-      </div>
-    </DragDropContext>
+    
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className='App'>
+          <span className="heading">TaskJourney</span>
+          <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+          <TodoList todos={todos} setTodos={setTodos} completedTodos={completedTodos} setCompletedTodos={setCompletedTodos} />
+        </div>
+      </DragDropContext>
   )
 }
 

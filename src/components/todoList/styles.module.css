@@ -13,6 +13,8 @@
     padding: 15px;
     border-radius: 5px;
     background-color: rgb(50, 195, 205);
+    overflow-y: auto;
+    max-height: 500px;
 }
 
 .todos__heading {
