@@ -4,7 +4,6 @@ import InputField from './components/inputField/InputField';
 import { Todo } from './types/model';
 import TodoList from './components/todoList/TodoList';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
-import { CustomScroll } from "react-custom-scroll";
 
 const App: React.FC = () => {
 
